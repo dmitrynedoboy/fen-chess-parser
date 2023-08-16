@@ -20,7 +20,7 @@ body {
 
 .fen-parser {
     width: 50%;
-    height: 80%;
+    height: 90%;
     min-height: 440px;
     min-width: 250px;
     background-color: #fff;
@@ -107,6 +107,9 @@ body {
 }
 
 @media (max-width: 1024px) {
+    .fen-parser {
+        width: 70%;
+    }
     .fen-parser__container_width {
         width: 100%;
     }
@@ -148,7 +151,7 @@ body {
 
 @media (max-width: 375px) {
     .fen-parser {
-        height: 50%;
+        height: 60%;
         width: 80%;
     }
     .fen-parser__header {

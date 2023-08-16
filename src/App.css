@@ -1,38 +1,165 @@
-.App {
-  text-align: center;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.full-width {
+    width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.fen-parser {
+    width: 50%;
+    height: 80%;
+    min-height: 440px;
+    min-width: 250px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.fen-parser__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fen-parser__header {
+    width: 70%;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.fen-parser__input {
+    padding: 10px;
+    font-size: 16px;
+    width: 80%;
+    max-width: 550px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.fen-parser__container_width {
+    width: 60%;
+}
+
+.fen-parser__button {
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.2s;
+}
+
+.fen-parser__button:hover {
+    background-color: #0056b3;
+}
+
+.fen-parser__message_error {
+    margin-top: 10px;
+    color: red;
+}
+
+.fen-parser__board {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 3px;
+}
+
+.fen-parser__row {
+    display: contents;
+}
+
+.fen-parser__cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px #333 solid;
+    font-size: 28px;
+}
+
+.fen-parser__row:nth-child(odd) .fen-parser__cell:nth-child(even),
+.fen-parser__row:nth-child(even) .fen-parser__cell:nth-child(odd) {
+    background-color: #ddd;
+}
+
+@media (max-width: 1024px) {
+    .fen-parser__container_width {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .fen-parser {
+        height: 80%;
+        width: 70%;
+    }
+
+    .fen-parser__header {
+        font-size: 24px;
+    }
+
+    .fen-parser__cell {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fen-parser {
+        height: 70%;
+        width: 80%;
+    }
+    .fen-parser__board {
+        width: 100%;
+        height: 90%;
+    }
+
+    .fen-parser__header {
+        font-size: 22px;
+    }
+
+    .fen-parser__cell {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 375px) {
+    .fen-parser {
+        height: 50%;
+        width: 80%;
+    }
+    .fen-parser__header {
+        font-size: 18px;
+    }
+
+    .fen-parser__cell {
+        font-size: 18px;
+    }
+
+    .fen-parser__board {
+        gap: 2px;
+    }
 }
